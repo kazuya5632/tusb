@@ -1,0 +1,68 @@
+{\rtf1\ansi\ansicpg932\cocoartf1561\cocoasubrtf400
+{\fonttbl\f0\fnil\fcharset0 LucidaGrande;\f1\fnil\fcharset0 AndaleMono;\f2\fnil\fcharset128 HiraginoSans-W3;
+\f3\fnil\fcharset0 HelveticaNeue;\f4\fswiss\fcharset0 Helvetica;\f5\fmodern\fcharset0 Courier;
+}
+{\colortbl;\red255\green255\blue255;\red47\green255\blue18;\red0\green0\blue0;\red52\green52\blue52;
+\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c15686\c99608\c7843;\csgray\c0\c90000;\cssrgb\c26667\c26667\c26667;
+\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \uc0\u9632 SSH\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1 \cf2 \cb3 \CocoaLigature0 ssh -i /Users/miyajimakazuya/Downloads/my-key.pem ec2-user@54.64.199.254\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0 \cf2 \
+\uc0\u9632 github SSH\
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCcbWrkCbYovyNJjT0zXHL3YWFQXwUSbYvHDGZ+mMIL4HGLqkfV/Ji7qPvnFVl/j39ET03xRYvVDKSZRiNhA3SqfWqw8T76CIgrRUvCwWR2lA+C1A4d3B9wknaYbVninCoM+f49yzJHW13vT5Gd1vjri2nPLy7yLIeW6ObRRHYi2T2dA/ZcNMfYeLmITKWLH4mcWiqaPmpMHOkdHwGEUHPcN2JqByNWL78lUAOPBWuzfCMpvc4ueQXzsSxCGjgiqiMw7JnnswZGQHb8FT8mM//TXOHG6DEIHdrQPsqWFEIZgIDnD2Ju8nuTPSOQnySuUcaDfRDxnhv2WfBeAIMdsO0PBTxq924a9bwibXS1sYh+lrFnpDoQieGf7JLH/3C9/qDSV0Ziwr0ohGXBuFdevqv8Q3klvYYuB4G6ZSmus3JQsxWxc5L7lpRz7384oWrkLXnpLzQBh3Ma86L2aUMEJTweMLWLOZ6iYm/AwdkdpDAwLDh2r6cYQEJjgJcv3mX45KqCs0UXdA0LXIE0sC6BKy2BlloFuWsYGWsxMnU4eK9Gx1FTCJcC2SAqmf3Aus/Zg44FSvVyp5Eb6efpvO0IjZ/z4yXszqzZOs6JAdVcrRy5h+6LkhoJb4qG7At/1YVqmUOov4eHLfm2FZuWr9IvNsnqcRi9LiMGASrJI/ZOik+8pQ==\cf0 \cb1 \CocoaLigature1 \
+\uc0\u9632 
+\f2 \'83\'74\'83\'40\'83\'43\'83\'8b\'93\'5d\'91\'97
+\f0 \
+scp -i 
+\f1 \cf2 \cb3 \CocoaLigature0 /Users/miyajimakazuya/Downloads/my-key.pem
+\f0 \cf0 \cb1 \CocoaLigature1  
+\f1 \cf2 \cb3 \CocoaLigature0 /Users/miyajimakazuya/Downloads/app.js ec2-user@
+\f3\fs26 \cf4 \cb5 \expnd0\expndtw0\kerning0
+\CocoaLigature1 54.92.47.99
+\f1\fs24 \cf2 \cb3 \kerning1\expnd0\expndtw0 \CocoaLigature0 :/home/ec2-user\
+
+\f0 \cf0 \cb1 \CocoaLigature1 \
+\uc0\u9632 
+\f2 \'94\'e9\'96\'a7\'8c\'ae\'83\'70\'83\'58
+\f0 \
+/Users/miyajimakazuya/Downloads/my-key.pem\
+\
+\uc0\u9632 
+\f4 app.js\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f5 \cf6 \expnd0\expndtw0\kerning0
+var http = require('http'); \
+\pard\pardeftab720\sl280\partightenfactor0
+\cf6 http.createServer(function(req,res)\{\
+    var data = \{\
+        RequestHeader: req.headers\
+    \};\
+\
+    if(req.method == 'GET')\{ \
+        response(res,data);\
+    \}else if(req.method == 'POST')\{ \
+        req.on('data',function(body)\{\
+            data.RequestBody = body.toString(); req.on('end',function()\{\
+            response(res,data); \});\
+        \}); \
+    \}\
+\}).listen(8080);\
+\
+function response(res,data)\{\
+    var json = JSON.stringify(data);\
+    res.writeHead(\
+        200,\
+        \{'Content-Type':'application/json','Content- Length':json.length\}\
+    );\
+    res.end(json); \
+\}\
+}
