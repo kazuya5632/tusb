@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<script type="text/javascript">
+  window.onload = function onLoad() {
+    /*
+    [How to add new information]
+    var info_yyyyMMdd = "new information!";
+    infoArray.unshift(info_yyyyMMdd);
+     */
+    var infoArray = [];
+    var info_20170101 = "Coming Soon";
+    //var info_20180101 = "newInfoTest";
+    //var info_20180501 = "newInfoTest";
+    //var info_20181201 = "newInfoTest";
+    infoArray.unshift(info_20170101);
+    //infoArray.unshift(info_20180101);
+    //infoArray.unshift(info_20180501);
+    //infoArray.unshift(info_20181201);
+
+    var innerStr = "";
+    target = document.getElementById("newInfo");
+    for (var i = 0; i < infoArray.length; i++) {
+      innerStr = innerStr + "<p style='text-align: left; color: black'>"
+          + infoArray[i] + "</p>";
+	}
+    target.innerHTML = innerStr;
+  }
+</script>
+<meta name="author" content="東京理科大　蔡研究室">
+<meta name="description"
+  content="特にコヒーレントな量子状態操作を可能とする超伝導人工原子(超伝導量子ビット)を実現し、超伝導量子回路という新規かつ多大な可能性を秘めた分野を開拓する。">
+<meta name="keywords"
+  content="理科大,tus,蔡,蔡兆申,物理,研究室,CREST,J.S Tsai,tsai,量子コンピューター,quantum computer,SQUID,超伝導,ジョセフソン接合,josephson junction,アニーリング,量子,回路,qubit,量子ビット">
+<link rel="stylesheet" type="text/css" href="sample.css">
+<title>tsai lab.</title>
+<link rel="shortcut icon" href="j.ico">
+</head>
+<body text="white">
+  <div class="cd-fixed-bg cd-bg-1">
+    <div id="wrap">
+      <div class="box11">
+        <div id="floating-menu">
+          <div id="submenu">
+            <div id="submenu_header">
+              <font color=white>Menu</font>
+            </div>
+            <ul id="submenu_body">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="link/introduction.html">Introduction</a></li>
+              <li><a href="link/member.html">Member</a></li>
+              <li><a href="link/publications.html">Publications</a></li>
+              <li><a href="link/lecture.html">Lecture</a></li>
+              <li><a href="link/access.html">Access/Contact</a></li>
+              <li><a href="link/photography.html">Photography</a></li>
+              <li><a href="link/message.html">Message</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="top">
+          <p>
+            <a href="index_japanese.html" class="square_btn">to Japanese</a>
+        </div>
+
+        <div align="center">
+          <h1 class="heavy">
+            <i><font size="25">Tsai Laboratory</font></i>
+          </h1>
+
+          <h2 class="heavy">
+            <i><font size="5">"What I cannot create, I do not
+                understand."</font><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&mdash;&mdash;&mdash;&mdash; Richard
+              Feynman</i>
+          </h2>
+
+          <img src="a.gif" width="600" height="250" border="0" align="middle"
+            hspace="10" vspace="10">
+
+          <h2 class="heavy">What's new!?</h2>
+
+          <p class="infobox" id="newInfo"></p>
+
+          <div style="display: inline-block">
+            <br> <br> <br> <a href="http://www.tus.ac.jp/"
+              target="_blank"><img src="s1.png" width="200" height="50"
+              border="0" align="right" hspace="10" vspace="10"></a> <a
+              href="http://www.riken.jp/" target="_blank"><img src="k.png"
+              width="200" height="50" border="0" align="right" hspace="10"
+              vspace="10"></a> <a
+              href="http://www.jst.go.jp/kisoken/crest/index.html"
+              target="_blank"><img src="c.png" width="200" height="100"
+              border="0" align="right" hspace="10" vspace="10"></a>
+          </div>
+          <br> <br> <br> <br>
+          <p>
+          <h4>
+            <i><font color="white" size="4">All rights reserved by
+                Tsai lab.</font></i>
+          </h4>
+          <p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
